@@ -1,0 +1,445 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+const int MAX_USERS = 100;
+
+class CafeManagementSystem {
+private:
+    int userCount = 0;
+    int ids[MAX_USERS];
+    string names[MAX_USERS];
+    string emails[MAX_USERS];
+    string passwords[MAX_USERS];
+
+public:
+    void signUP() {
+        if (userCount >= MAX_USERS) {
+            cout << "Error! Maximum number of users reached!" << endl;
+            return;
+        }
+
+        cout << "<-----------Sign-Up---------->" << endl;
+        cout << ">>Enter Username: ";
+        cin >> names[userCount];
+        cout << ">>Enter Email ID: ";
+        cin >> emails[userCount];
+        cout << ">>Enter User ID: ";
+        cin >> ids[userCount];
+        cout << ">>Enter Password: ";
+        cin >> passwords[userCount];
+
+        userCount++;
+        cout << "Signed Up Successfully!" << endl;
+        login();
+    }
+
+    void login() 
+	{
+        int inputID;
+        string inputPassword;
+        upside:
+        cout << "<-----------Login------------>" << endl;
+        cout << ">>Enter User ID: ";
+        cin >> inputID;
+        cout << ">>Enter Password: ";
+        cin >> inputPassword;
+
+        bool loginSuccess = false;
+
+        for (int i = 0; i < userCount; i++) 
+		{
+            if (ids[i] == inputID && passwords[i] == inputPassword) 
+			{
+                cout << "Logged In Successfully! Welcome, " << names[i] << "." << endl;
+                loginSuccess = true;
+                break;
+            }
+        }
+
+        if (!loginSuccess) 
+		{
+            cout << "Login Error! Make sure your ID and password both are correct." << endl;
+            goto upside;
+        }
+    }
+
+    void displayUsers() 
+	{
+        cout << "\nRegistered Users:" << endl;
+        for (int i = 0; i < userCount; i++) 
+		{
+            cout << "User ID: " << ids[i] << ", Name: " << names[i] << ", Email: " << emails[i] << endl;
+        }
+    }
+};
+class CafeMenu 
+{
+public:
+    void menu() 
+	{
+        int choice;
+        cout << "________________________________________________________" << endl;
+        cout << "--------------------------------------------------------" << endl;
+        cout << "                      * MENU *                          " << endl;
+        cout << "--------------------------------------------------------" << endl;
+        cout << "________________________________________________________" << endl;
+        cout << "<----------Beverages----------->" << endl << endl << endl;
+        cout << "Item-Name              price  " << endl << endl;
+        cout << "1.Espresso            - $3.00 " << endl;
+        cout << "2.Cappuccino          - $4.00 " << endl;
+        cout << "3.Latte               - $4.50 " << endl;
+        cout << "4.Americano           - $3.50 " << endl;
+        cout << "5.Mocha               - $5.00 " << endl;
+        cout << "6.Hot Chocolate       - $3.50 " << endl;
+        cout << "7.Chai latte          - $4.00 " << endl;
+        cout << "8.Iced Latte          - $4.50 " << endl;
+        cout << "9.Iced Coffee         - $3.50 " << endl;
+        cout << "10.Tea                - $2.00 " << endl << endl;
+        cout << ">>>>>>Enter your Choice :" << endl;
+        cin >> choice;
+        Order(choice);
+    }
+	
+	
+public:
+    void Order(int choice) 
+	{
+        
+        switch (choice) 
+		{
+            case 1:
+                cout << "Ready to serve  >Espresso< worth $3.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Espresso    - $3.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+
+            case 2:
+                cout << "Ready to serve  >Cappuccino< worth $4.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Cappuccino   - $4.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 3:
+            	cout << "Ready to serve  >Latte< worth $4.50" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Latte   - $4.50   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 4:
+            	cout << "Ready to serve  >Americano< worth $3.50" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Americano   - $3.50   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 5:
+            	cout << "Ready to serve  >Mocha< worth $5.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Mocha   - $5.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 6:
+            	cout << "Ready to serve  >Hot Chocolate< worth $3.50" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Hot Chocolate   - $3.50   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 7:
+            	cout << "Ready to serve  >Chai Latte< worth $4.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+        		cout << "* Chai latte   - $4.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 8:
+            	cout << "Ready to serve  >Iced Latte< worth $4.50" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Iced Latte   - $4.50   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 9:
+            	cout << "Ready to serve  >Iced Coffee< worth $3.50" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Iced Coffee   - $3.50   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            case 10:
+            	cout << "Ready to serve  >Tea< worth $2.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Tea   - $2.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                menu();
+                break;
+            
+            default:
+                cout << "Error! Enter Valid Choice ..." << endl;
+        }
+        
+    }
+    void Breakfast()
+	{
+    	int choice;
+        cout << "________________________________________________________" << endl;
+        cout << "--------------------------------------------------------" << endl;
+        cout << "                      * MENU *                          " << endl;
+        cout << "--------------------------------------------------------" << endl;
+        cout << "________________________________________________________" << endl;
+        cout << "<----------Breakfast----------->" << endl << endl << endl;
+        cout << "Item-Name                         price  " << endl << endl;
+        cout << "1.Avacado Toast                 - $6.00 " << endl;
+        cout << "2.Egg and Chinese Croissant     - $5.50 " << endl;
+        cout << "3.Pancakes and Maple Syrup      - $7.00 " << endl;
+        cout << "4.Granola parfait               - $5.00 " << endl;
+        cout << "5.Bagel and cream Cheese        - $3.50 " << endl <<endl;
+        cout << ">>>>>>Enter your Choice :" << endl;
+        cin >> choice;
+        switch(choice)
+        {
+        	case 1:
+        		cout << "Ready to serve  >Avacado Toast< worth $6.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Avacado Toast   - $6.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                Breakfast();
+                break;
+            case 2:
+            	cout << "Ready to serve  >Egg and Chinese Croissant< worth $5.50" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Egg and Chinese Croissant   - $5.50   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                Breakfast();
+                break;
+            case 3:
+            	cout << "Ready to serve  >Pancakes and Maple Syrup< worth $7.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Pancakes and Maple Syrup  - $7.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                Breakfast();
+                break;
+            case 4:
+            	cout << "Ready to serve  >Granola parfait< worth $5.00" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Granola parfait  - $5.00   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                Breakfast();
+                break;
+            case 5:
+            	cout << "Ready to serve  >Bagel and cream Cheese< worth $3.50" << endl;
+                cout << "<-----Order Details------>" << endl;
+                cout << "* Bagel and cream Cheese  - $3.50   " << endl << endl << endl;
+                paymentProcess();
+                deliveryOptions();
+                sleep(1);
+                Breakfast();
+                break;
+                default:
+                	if(choice>5){
+                		cout<<"Error ! Please Enter Valid Choice ..."<<endl;
+					}
+		}
+	}
+	void lunch()
+	{
+			int choice ;
+				cout << "________________________________________________________" << endl;
+       			cout << "--------------------------------------------------------" << endl;
+        		cout << "                      * MENU *                          " << endl;
+        		cout << "--------------------------------------------------------" << endl;
+        		cout << "________________________________________________________" << endl;
+        		cout << "<----------Lunch----------->" << endl << endl << endl;
+        		cout << "Item-Name                          price  " << endl << endl;
+        		cout << "1.Grilled Cheese Sandwich         - $6.50 " << endl;
+        		cout << "2.Turkey & Avacado Sandwich       - $8.00 " << endl;
+        		cout << "3.Caesar Salad                    - $7.00 " << endl;
+        		cout << "4.Quinoa Bowl with Veggies        - $8.50 " << endl;
+        		cout << "5.Soup of the Day                 - $4.50 " << endl <<endl;
+        		cout << ">>>>>>Enter your Choice :" << endl;
+        		cin >> choice;
+        		switch(choice)
+        		{
+        			case 1:
+            			cout << "Ready to serve  >Grilled Cheese Sandwich< worth $6.00" << endl;
+                		cout << "<-----Order Details------>" << endl;
+                		cout << "* Grilled Cheese Sandwich  - $6.00   " << endl << endl << endl;
+                		paymentProcess();
+                		deliveryOptions();
+                		sleep(1);
+                		lunch();
+                		break;
+                	case 2:
+                		cout << "Ready to serve  >Turkey & Avacado Sandwich< worth $8.00" << endl;
+                		cout << "<-----Order Details------>" << endl;
+                		cout << "* Turkey & Avacado Sandwich  - $8.00   " << endl << endl << endl;
+                		paymentProcess();
+                		deliveryOptions();
+                		sleep(1);
+                		lunch();
+        				break;
+        			case 3:
+        				cout << "Ready to serve  >Caesar Salad< worth $7.00" << endl;
+                		cout << "<-----Order Details------>" << endl;
+                		cout << "* Caesar Salad   - $7.00   " << endl << endl << endl;
+                		paymentProcess();
+                		deliveryOptions();
+                		sleep(1);
+                		lunch();
+                		break;
+                	case 4:
+                		cout << "Ready to serve  >Quinoa Bowl with Veggies< worth $8.50" << endl;
+                		cout << "<-----Order Details------>" << endl;
+                		cout << "* Quinoa Bowl with Veggies  - $8.50   " << endl << endl << endl;
+                		paymentProcess();
+                		deliveryOptions();
+                		sleep(1);
+                		lunch();
+                		break;
+                	case 5:
+                		cout << "Ready to serve  >Soup of the Day< worth $4.50" << endl;
+                		cout << "<-----Order Details------>" << endl;
+                		cout << "* Soup of the Day  - $4.50   " << endl << endl << endl;
+                		paymentProcess();
+                		deliveryOptions();
+                		sleep(1);
+                		lunch();
+                		break;
+                		default:
+                			if(choice>6){
+                				cout<<"Error ! Enter valid Choice ..."<<endl;
+							}
+				}
+	}
+	void paymentProcess() 
+	{
+			string vote;
+        do 
+			{
+			
+            	cout << ">>>>Enter <pay> to pay the amount  : " << endl;
+            	cin >> vote;
+            	if (vote == "pay") 
+				{
+                	cout << "Amount paid Successfully!" << endl;
+            	}
+				else 
+				{
+                	cout << "Payment Error, Please Try Again ..." << endl;
+            	}
+        	} 		
+			while (vote != "pay");
+    }
+    
+    
+    
+    void deliveryOptions() 
+	{
+        int choice;
+        cout << "Where do you like to serve?" << endl;
+        cout << "1. In store" << endl;
+        cout << "2. Delivery" << endl;
+        cout << "3. Carry Out" << endl << endl;
+        cout << ">>>>>>Enter your choice :" << endl;
+        cin >> choice;
+
+        switch (choice) 
+		{
+            case 1:
+                cout << "In store order Accepted ...Please wait for 5 Minutes ..." << endl;
+                break;
+            case 2:
+                cout << "Delivery Accepted ....parcel will be delivered in 30 minutes...." << endl;
+                break;
+            case 3:
+                cout << "Carry out order Accepted ....Please wait for 5 Minutes ..." << endl;
+                break;
+            default:
+                cout << "Error! Enter Valid Choice ..." << endl;
+        }
+    }
+};
+
+int main() {
+	int choice;
+	
+    CafeManagementSystem cafe;
+    CafeMenu cafe2;
+    cout<<"____________________________________________________________________________________________________________________"<<endl;
+    cout<<"--------------------------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"                                                 *   NAVANATHS CAFE    *                                            "<<endl;
+    cout<<"--------------------------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"  * welcome  * \t welcome  \t * welcome  \t* welcome  * \t welcome * \t * welcome \t welcome * "<<endl<<endl;
+    cout<<"____________________________________________________________________________________________________________________"<<endl;
+    cout<<"____________________________________________________________________________________________________________________"<<endl;
+    cout<<"|               *Options*                             |                  *Order Food*                              | "<<endl;       
+    cout<<"|  >>     Sign-Up         -   Press 1                 |         >> Beverages      -   Press 4                      |"<<endl;
+    cout<<"|  >>     Login           -   Press 2                 |         >> Break-Fast     -   Press 5                      |"<<endl;
+	cout<<"|  >>     Display Users   -   Press 3                 |         >> Lunch          -   Press 6                      | "<<endl;
+	cout<<"--------------------------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"---->  Enter Your Choice : "<<endl;
+    cin>>choice;
+    switch(choice)   
+    {
+    	case 1 :
+    		cafe.signUP();
+    		break;
+    	case 2 :
+    		cafe.login();
+			break;
+    	case 3 :
+    		cafe.displayUsers();
+    		break;
+    	case 4 :
+    		cafe2.menu();
+    		break;
+    	case 5 :
+    		cafe2.Breakfast();
+    		break;
+    	case 6 :
+    		cafe2.lunch();
+    		break;
+    	default:
+    		if(choice>=6)
+    		{
+    			cout<<"Error ! Please Enter Valid Choice...."<<endl;
+			}
+			return 0;
+	}
+    
+   
+}
