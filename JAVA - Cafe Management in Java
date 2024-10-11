@@ -1,0 +1,442 @@
+package com.cafemanagementsystem;
+
+import java.util.Scanner;
+
+class CafeOptions
+{
+		void menu() 
+		{
+			int choice ;
+			    System.out.println("<-------------Beverages--------->");
+			    System.out.println("1. Espresso            - $3.00");
+	        System.out.println("2. Cappuccino          - $4.00");
+	        System.out.println("3. Latte               - $4.50");
+	        System.out.println("4. Americano           - $3.50");
+	        System.out.println("5. Mocha               - $5.00");
+	        System.out.println("6. Hot Chocolate       - $3.50");
+	        System.out.println("7. Chai Latte          - $4.00");
+	        System.out.println("8. Iced Latte          - $4.50");
+	        System.out.println("9. Iced Coffee         - $3.50");
+	        System.out.println("10. Tea                - $2.00");
+	        System.out.println();
+	        Scanner sc=new Scanner(System.in);
+	        System.out.print(">>>>>>Enter your Choice: ");
+	        choice = sc.nextInt();
+	        order(choice);
+		}
+		void order(int choice) 
+		{
+			switch(choice) 
+			{
+			case 1 :
+				System.out.println("Ready to serve  >Espresso< worth $3.00");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Espresso    - $3.00");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 2 :
+				System.out.println("Ready to serve  >Cappuccino< worth $4.00");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Cappuccino    - $4.00");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 3 :
+				System.out.println("Ready to serve  >Latte< worth $4.50");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Latte    - $4.50");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 4 :
+				System.out.println("Ready to serve  >Americano< worth $3.50");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Americano    - $3.50");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 5 :
+				System.out.println("Ready to serve  >Mocha< worth $5.00");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Mocha    - $5.00");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 6 :
+				System.out.println("Ready to serve  >Hot Chocolate< worth $3.50");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Hot Chocolate    - $3.50");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 7 :
+				System.out.println("Ready to serve  >Chai Latte< worth $4.00");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Chai Latte    - $4.00");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 8 :
+				System.out.println("Ready to serve  >Iced Latte< worth $4.50");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Iced Latte    - $4.50");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 9 :
+		        System.out.println("Ready to serve  >Iced Coffee< worth $3.50");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Iced Coffee    - $3.50");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+			case 10 :
+				System.out.println("Ready to serve  >Tea< worth $2.00");
+		        System.out.println("<-----Order Details------>");
+		        System.out.println("* Tea    - $2.00");
+		        System.out.println();
+		        paymentProcess();
+		        deliveryOptions();
+		        break;
+		        default:
+		        	System.out.println("Error ! Enter valid choice ");
+			}
+			
+		}	
+
+
+
+		void breakfast() 
+		{
+			int choice;
+			Scanner sc=new Scanner(System.in);
+			System.out.println("__________________________________________________________");
+	        System.out.println("|--------------------------------------------------------|");
+	        System.out.println("|                      * MENU *                          |");
+	        System.out.println("|--------------------------------------------------------|");
+	        System.out.println("|________________________________________________________|");
+	        System.out.println("<----------Breakfast----------->");
+	        System.out.println();
+	        System.out.println("Item-Name                         price  ");
+	        System.out.println();
+	        System.out.println("1. Avocado Toast                 - $6.00");
+	        System.out.println("2. Egg and Chinese Croissant     - $5.50");
+	        System.out.println("3. Pancakes and Maple Syrup      - $7.00");
+	        System.out.println("4. Granola parfait               - $5.00");
+	        System.out.println("5. Bagel and cream Cheese        - $3.50");
+	        System.out.println();
+	        System.out.print(">>>>>>Enter your Choice: ");
+	        choice = sc.nextInt();
+	        switch(choice) 
+	        {
+	        case 1:
+	        	System.out.println("Ready to serve  >Avocado Toast< worth $6.00");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Avocado Toast   - $6.00");
+	            System.out.println();
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 2:
+	            System.out.println("Ready to serve  >Egg and Chinese Croissant< worth $5.50");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Egg and Chinese Croissant   - $5.50");
+	            System.out.println();	            
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 3 :
+	        	System.out.println("Ready to serve  >Pancakes and Maple Syrup< worth $7.00");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Pancakes and Maple Syrup  - $7.00");
+	            System.out.println();	            
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 4 :
+	            System.out.println("Ready to serve  >Granola parfait< worth $5.00");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Granola parfait  - $5.00");
+	            System.out.println(); 
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 5 :
+	        	System.out.println("Ready to serve  >Bagel and cream Cheese< worth $3.50");
+	        	System.out.println("<-----Order Details------>");
+	        	System.out.println("* Bagel and cream Cheese  - $3.50");
+	        	System.out.println();
+	        	paymentProcess();
+	        	deliveryOptions();
+	        	break;
+	        	default:
+	        		if(choice>5) 
+	        		{
+	        			System.out.println("Error ! Please enter valid choice...");
+	        		}
+	        }
+		}
+		
+		
+		void lunch() 
+		{
+			int choice ;
+			System.out.println("__________________________________________________________");
+	        System.out.println("|--------------------------------------------------------|");
+	        System.out.println("|                      * MENU *                          |");
+	        System.out.println("|--------------------------------------------------------|");
+	        System.out.println("|________________________________________________________|");
+	        System.out.println("<----------Lunch----------->");
+	        System.out.println();
+	        System.out.println("Item-Name                          price  ");
+	        System.out.println();
+	        System.out.println("1. Grilled Cheese Sandwich         - $6.50");
+	        System.out.println("2. Turkey & Avocado Sandwich       - $8.00");
+	        System.out.println("3. Caesar Salad                    - $7.00");
+	        System.out.println("4. Quinoa Bowl with Veggies        - $8.50");
+	        System.out.println("5. Soup of the Day                 - $4.50");
+	        System.out.println();
+	        Scanner sc=new Scanner(System.in);
+	        System.out.print(">>>>>>Enter your Choice: ");
+	        choice = sc.nextInt();
+	        switch(choice) 
+	        {
+	        case 1 :
+	        	System.out.println("Ready to serve  >Grilled Cheese Sandwich< worth $6.00");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Grilled Cheese Sandwich  - $6.00");
+	            System.out.println();
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 2:
+	            System.out.println("Ready to serve  >Turkey & Avocado Sandwich< worth $8.00");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Turkey & Avocado Sandwich  - $8.00");
+	            System.out.println();
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 3:
+	            System.out.println("Ready to serve  >Caesar Salad< worth $7.00");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Caesar Salad   - $7.00");
+	            System.out.println();
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 4:
+	        	System.out.println("Ready to serve  > Quinoa Bowl with Veggies< worth $8.50");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Quinoa Bowl with Veggies   - $8.50");
+	            System.out.println();
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	        case 5 :
+	        	System.out.println("Ready to serve  > Soup of the Day < worth $4.50");
+	            System.out.println("<-----Order Details------>");
+	            System.out.println("* Soup of the Day    - $4.50");
+	            System.out.println();
+	            paymentProcess();
+	            deliveryOptions();
+	            break;
+	            default:
+	            	System.out.println("Error ! Please Enter valid choice ...");
+	        }
+		}
+		
+		
+		
+		void paymentProcess()
+		{
+			char vote;
+			Scanner sc=new Scanner(System.in);
+
+	        do 
+	        {
+	            System.out.println("<<<<<<<<<<<<<<Payment Gateway>>>>>>>>>>>>>>>");
+	            System.out.print(">>>>Enter 'p' to pay the amount: ");
+	            vote = sc.next().charAt(0);
+
+	            if (vote == 'p') 
+	            {
+	                System.out.println("Amount paid Successfully!");
+	            } 
+	            else 
+	            {
+	                System.out.println("Payment Error, Please Try Again ...");
+	            }
+	        } while (vote != 'p');
+		}
+		void deliveryOptions() 
+		{
+			int choice;
+			Scanner sc=new Scanner(System.in);
+	        System.out.println("Where do you like to serve?");
+	        System.out.println("1. In store");
+	        System.out.println("2. Delivery");
+	        System.out.println("3. Carry Out");
+	        System.out.print(">>>>>>Enter your choice: ");
+	        choice = sc.nextInt();
+
+	        switch (choice) 
+	        {
+	            case 1:
+	                System.out.println("In-store order accepted. Please wait for 5 minutes...");
+	                break;
+	            case 2:
+	                System.out.println("Delivery accepted. Parcel will be delivered in 30 minutes...");
+	                break;
+	            case 3:
+	                System.out.println("Carry-out order accepted. Please wait for 5 minutes...");
+	                break;
+	            default:
+	                System.out.println("Error! Enter valid choice...");
+	        }
+
+
+		}
+}
+
+public class CafeManu 
+{
+		
+	Scanner sc = new Scanner (System.in);
+	private int count = 0;
+    private int[] ids = new int[100];
+    private String[] emails = new String[100];
+    private String[] passwords = new String[100];
+    private String[] names = new String[100];
+    
+	  public
+		  void signup()
+	  {
+		  		if(count >= 100)
+		  		{
+		  			System.out.println("Error ! Maximum number of users reached!");
+		  			return;
+		  		}
+		  		System.out.println("<<<----Signup---->>>");
+		  		System.out.println("Enter UserName :");
+		  		names[count] = sc.next();
+		  		System.out.println("Enter Email ID :");
+		  		emails[count] = sc.next();
+		  		System.out.println("Enter User ID :");
+		  		ids[count]= sc.nextInt();
+		  		System.out.println("Enter Password :");
+		  		passwords[count]=sc.next();
+		  		
+		  		count++;
+		  		System.out.println("Signed Up Successfully !");
+		  		login();
+	 }
+	  
+	  
+	  void login() 
+	  {
+		  int inputID;
+		  String inputpassword;
+		  up:
+		  System.out.println("<<<-----LOGIN------>>>");
+		  System.out.println("Enter User ID :");
+		  inputID = sc.nextInt();
+		  System.out.println("Enter Password :");
+		  inputpassword = sc.next();
+		  
+		  boolean loginSuccess = false ;
+		  
+		  for(int i=0 ; i<count ; i++ ) 
+		  {
+			  if(ids[i]==inputID && passwords[i]==inputpassword) 
+			  {
+				  System.out.println("Logged In successfully ! Welcome "+names[i]+".");
+				  break;
+			  }
+		  }
+		  if(!loginSuccess) 
+		  {
+			  System.out.println("Login Error ! Make sure your Id and password both are Correct .");
+//			  goto up;
+		  }
+		  
+	  }
+	  
+	  
+	  void displayUsers() 
+	  {
+		  System.out.println("\n Registered Users :");
+		  for(int i = 0 ; i < count ; i++) 
+		  {
+			  System.out.println("User ID: "+ids[i]+"Name:"+names[i]+"Email:"+emails);
+		  }
+	  }
+
+
+		public static void main(String args[]) 
+		{
+			
+			Scanner sc = new Scanner(System.in);
+			
+			CafeManu cafe = new CafeManu();
+			CafeOptions cafe2 =new CafeOptions();
+		        int choice;
+
+		        System.out.println("______________________________________________________________________________________________________________________");
+		        System.out.println("|--------------------------------------------------------------------------------------------------------------------|");
+		        System.out.println("|                                              * NAVANATHS CAFE *                                                    |");
+		        System.out.println("|--------------------------------------------------------------------------------------------------------------------|");
+		        System.out.println("| * welcome *      \t welcome \t *     welcome \t*    welcome *      \t welcome *   \t    * welcome      |");
+		        System.out.println("|____________________________________________________________________________________________________________________|");
+		        System.out.println("____________________________________________________________________________________________________________________");
+		        System.out.println("| *Options*    ");
+		        System.out.println("| >> Sign-Up        - Press 1  | ");
+		        System.out.println("| >> Login          - Press 2 | >>  |");
+		        System.out.println("| >> Display Users  - Press 3| ");
+		        System.out.println();
+		        System.out.println("| *Order Food* |");
+		        System.out.println("| >> Beverages      - Press 4 |");
+		        System.out.println("| >> Break-Fast     - Press 5|" );
+		        System.out.println("| >> Lunch          - Press 6 ");
+		        System.out.println("--------------------------------------------------------------------------------------------------------------------");
+		        System.out.print("----> Enter Your Choice: ");
+		        choice = sc.nextInt();
+
+		        switch (choice) 
+		        {
+		            case 1:
+		                cafe.signup();
+		                break;
+		            case 2:
+		                cafe.login();
+		                break;
+		            case 3:
+		                cafe.displayUsers();
+		                break;
+		            case 4:
+		                cafe2.menu();
+		                break;
+		            case 5:
+		                cafe2.breakfast();
+		                break;
+		            case 6:
+		                cafe2.lunch();
+		                break;
+		            default:
+		                if (choice >= 6) 
+		                {
+		                    System.out.println("Error! Please Enter Valid Choice....");
+		                }
+		        }
+		}
+}
