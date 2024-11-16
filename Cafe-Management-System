@@ -257,7 +257,7 @@ public:
                 cout << "* Granola parfait  - $5.00   " << endl << endl << endl;
                 paymentProcess();
                 deliveryOptions();
-                sleep(1);
+        	sleep(1);
                 Breakfast();
                 break;
             case 5:
